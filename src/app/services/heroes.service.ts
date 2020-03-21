@@ -70,14 +70,20 @@ export class HeroesService {
   }
 
   buscarHeroes(termino: string) {
+    //el termino lo recibe por html
     let heroesArr: Heroe[] = [];
     termino = termino.toLowerCase();
+    //crear una variable local llamada heroe que recorra el arreglo de heroes
     for (let heroe of this.heroes) {
+      //recibes el nombre y se iguala a los nombre recibidos
       let nombre = heroe.nombre.toLowerCase();
+      //Se condiciona que si existe en esa cadena de strings un termino parecido
+      // lo pushee dentro del arreglo
       if (nombre.indexOf(termino) >= 0) {
         heroesArr.push(heroe);
       }
     }
+    //se retorna el arreglo con el contenido
     return heroesArr;
   }
 

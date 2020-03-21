@@ -10,6 +10,7 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 
 //Service
 import { HeroesService } from './services/heroes.service';
+import { HeroeComponent } from './components/heroes/heroe/heroe.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { HeroesService } from './services/heroes.service';
     NavbarComponent,
     HomeComponent,
     AboutComponent,
-    HeroesComponent
+    HeroesComponent,
+    HeroeComponent
   ],
   imports: [
     BrowserModule,

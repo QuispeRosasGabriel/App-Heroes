@@ -1,6 +1,9 @@
 <h1>Heroes <small>de Marvel y DC</small></h1>
 <div class="card-columns">
-  <div class="card" *ngFor="let heroe of Heroes">
+  <div
+    class="card animated fadeIn fast"
+    *ngFor="let heroe of Heroes; let i = index"
+  >
     <img [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre" />
     <div class="card-body">
       <h5 class="card-title">{{ heroe.nombre }}</h5>
@@ -10,7 +13,13 @@
       <p class="card-text">
         <small class="text-muted">{{ heroe.aparicion }}</small>
       </p>
-      <button class="btn btn-outline-primary btn-block">Ver Más</button>
+      <button class="btn btn-outline-primary btn-block" (click)="verHeroe(i)">
+        Ver Más
+      </button>
+      <!-- en este caso colocamos / antes de porque esto viene de un componente padre -->
+      <!-- <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary"
+        >Ver Más</a
+      > -->
     </div>
   </div>
 </div>
